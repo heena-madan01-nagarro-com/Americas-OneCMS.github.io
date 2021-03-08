@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/onecms" mode="merge"/>
+    <filter root="/content/onecms" mode="merge"/>
+    <filter root="/content/dam/onecms" mode="merge"/>
+    <filter root="/content/experience-fragments/onecms" mode="merge"/>
+</workspaceFilter>
