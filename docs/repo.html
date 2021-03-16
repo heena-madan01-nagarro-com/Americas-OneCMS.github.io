@@ -2,4 +2,10 @@
 <h1 style="color: #2e6c80;">Repository Structure:</h1>
 <p>Each brand will have its own code reposiory for development. As we know Adobe supports single code repository deployment so we would be creating one single code repository which is replica of adobe cloud repository. Each brand's code would be synced to this single code repository.</p>
 <p>After complete code quality checks, a github sync action would be triggered to sync Adobe Cloud Git code from this repository.</p>
+<h2 style="color: #2e6c80;">Code Flow:</h2>
+<p>Each brand will work on its local environment. We will provide one QA environment on Azure and brand can test their code on provided QA.</p>
+<p>When QA and code quality passes then code will be pushed to single Git repository by pull request.</p>
+<p>After each brand's code merge to single git repository, a quality check would be triggered which is equivalent to Adobe Cloud quality checks.</p>
+<p>If code of each brand's is passed then it will be synced to Adobe Cloud repository after an action. If code fails due to any reason, mail would be triggered with report and its responsibility of brand to fix the necessary issues.</p>
+<h2 style="color: #2e6c80;">Deployment Cycle</h2>
 <p>&nbsp;</p>
