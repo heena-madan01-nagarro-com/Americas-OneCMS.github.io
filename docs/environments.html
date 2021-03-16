@@ -14,8 +14,12 @@ Three environments would be provided by Adobe which are shared across partners.
 User Acceptance Testing (UAT)
 When work passes through the internal testing phase and is ready for approvals, the team deploys it to a UAT server.
 
-Staging
+Staging(Stage)
+Staging is for pre-deployment. It’s like a dress rehearsal. A staging server’s set up is like production with all production configurations and the team uses it to perform smoke testing. This ensures the code and everything works in a production configuration and architecture.
+Hotfixes would be deployed directly on staging environment before actual prod deployment.
 
+Production(prod)
+Production servers are the final location for all finished and approved work. When you deploy code to a production server, this means everyone has approved it to go live. At this stage, the work is considered complete and approved for widespread use. Working code should only be deployed to a production server after it has been tested and approved for going live.
 
 ## Per partner Environment list:
 We will deploy sandbox on Azure and provide to each partner. We would be providing only one environment on Azuure i.e QA
