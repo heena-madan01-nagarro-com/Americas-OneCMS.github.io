@@ -16,10 +16,10 @@
 *  ***********************************************************************
 */-->
 
-<sly data-sly-use.footerModel="com.assaabloy.americas.onecms.core.models.Footer">
-     Footer Component ASSA ABLOY
-    <!-- Component HTML goes here -->
-</sly>
+<sly data-sly-use.footerModel="com.assaabloy.americas.onecms.core.models.Footer"/>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"/>
 
-<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-     data-sly-call="${templates.placeholder @ isEmpty = !configured}" />
+<sly data-sly-call="${clientLib.all @ categories='assa-abloy-onecms.sunny-component-library2'}" />
+
+	<assa-footer model='${footerModel.jsonData}'></assa-footer>
+
