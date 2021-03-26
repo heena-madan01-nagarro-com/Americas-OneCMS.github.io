@@ -1,10 +1,9 @@
 {
   "name": "onecms",
   "version": "1.0.0",
-  "description": "ASSA ABLOY OneCMS",
+  "description": "ASSA ABLOY Americas",
   "license": "ISC",
   "scripts": {
-    "build:clientlibs": "node aem-clientlib.js",
     "build:clientlib": "node aem-clientlib.js",
     "start": "aem-clientlib",
     "build": "clientlib --verbose"
@@ -14,7 +13,6 @@
     "fs-extra": "^9.1.0"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
-    "sunny-component-library2": "^1.2.8"
+    "one-cms-library": "^1.0.1"
   }
 }
