@@ -138,7 +138,7 @@ Import-Package: javax.annotation;version=0.0.0,*
         <dependency>
             <groupId>com.adobe.acs</groupId>
             <artifactId>acs-aem-commons-bundle</artifactId>
-            <version>4.5.2</version>
+            <version>5.0.4</version>
             <type>jar</type>
         </dependency>
     </dependencies>
