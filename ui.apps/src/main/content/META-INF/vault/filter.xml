@@ -3,4 +3,5 @@
     <filter root="/apps/onecms/clientlibs"/>
     <filter root="/apps/onecms/components"/>
     <filter root="/apps/onecms/i18n"/>
+    <filter root="/apps/onecms/shared"/>
 </workspaceFilter>
