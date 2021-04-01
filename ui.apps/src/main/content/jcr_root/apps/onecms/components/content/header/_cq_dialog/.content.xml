@@ -52,6 +52,7 @@
                                                   fieldLabel="Navigation Item Label"
                                                   jcr:primaryType="nt:unstructured"
                                                   name="./navItemLabel"
+												  required="{Boolean}true"
                                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                                     <navItemLink fieldDescription="Navigation Item Link/URL"
                                                  fieldLabel="Nav Item URL"
@@ -118,30 +119,12 @@
                                      name="./actions"
                                      sling:resourceType="granite/ui/components/foundation/form/fieldset">
                                  <items jcr:primaryType="nt:unstructured">
-				<!--
- 									<icontype
-										jcr:primaryType="nt:unstructured"
-										sling:resourceType="granite/ui/components/coral/foundation/form/select"
-										fieldLabel="Icon Type"
-										name="./icontype">
-										<items jcr:primaryType="nt:unstructured">
-										  <link
-											jcr:primaryType="nt:unstructured"
-											selected="{Boolean}true"
-											text="Image"
-											value="Image" />
-										  <button
-											jcr:primaryType="nt:unstructured"
-											text="Component"
-											value="Component" />
-										</items>
-									</icontype>
-				-->
                                     <iconUrl fieldDescription="Path/URL of the Icon"
                                              fieldLabel="Icon Image"
                                              jcr:primaryType="nt:unstructured"
                                              name="./iconUrl"
                                              rootPath="/content/dam"
+											 required="{Boolean}true"
                                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
                                     <iconAltText fieldDescription="Alt text to display on the Icon"
                                                  fieldLabel="Icon Alt text"

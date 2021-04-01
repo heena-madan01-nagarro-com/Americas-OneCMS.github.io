@@ -52,6 +52,7 @@
                                             fieldLabel="Column Header"
                                             jcr:primaryType="nt:unstructured"
                                             name="./header"
+											required="{Boolean}true"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                                     <headerLink fieldDescription="Footer Column Link"
                                                 fieldLabel="Column Header URL"
@@ -70,6 +71,7 @@
 												<label fieldDescription="Label to display on the link"
 													   fieldLabel="Label/Text"
 													   jcr:primaryType="nt:unstructured"
+													   required="{Boolean}true"
 													   name="./label"
 													   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
 												<path fieldDescription="Path to the page/Direct Link of the Lable"
@@ -144,6 +146,7 @@
                                                         fieldLabel="Copyright Item Label"
                                                         jcr:primaryType="nt:unstructured"
                                                         name="./copyrightItemLabel"
+														required="{Boolean}true"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                                     <copyrightItemURL fieldDescription="Path to the page/Target Link"
                                                       fieldLabel="Copyright Item URL"
