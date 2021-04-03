@@ -135,5 +135,15 @@ Import-Package: javax.annotation;version=0.0.0,*
             <version>1.4.4</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-bundle</artifactId>
+            <version>5.0.4</version>
+            <type>jar</type>
+        </dependency>
+		<dependency>
+			 <groupId>com.adobe.cq</groupId>
+			 <artifactId>core.wcm.components.core</artifactId>
+		</dependency>
+	</dependencies>
 </project>
