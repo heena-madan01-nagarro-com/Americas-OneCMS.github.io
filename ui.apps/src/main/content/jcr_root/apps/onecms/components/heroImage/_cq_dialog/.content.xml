@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Hero Image"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_image_v2">
     <content
+        granite:class="cmp-image__editor"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
@@ -27,61 +29,66 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <image
+                                            <file
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                fieldDescription="Select Image Path"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
                                                 fieldLabel="Image"
-                                                name="./fileName"
-                                                require="{Boolean}true"
-                                                rootPath="/content/dam"/>
+                                                fileNameParameter="./fileName"
+                                                fileReferenceParameter="./fileReference"
+                                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                multiple="{Boolean}false"
+                                                name="./file"
+                                                required="{Boolean}true"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
                                             <imageAltText
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Enter ALt Text for Image"
                                                 fieldLabel="Image Alt Text"
-                                                name="./altText"
-                                                require="{Boolean}true"/>
+                                                name="./altText"/>
                                             <title
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                fieldDescription="Enter Title"
+                                                fieldDescription="Title Name"
                                                 fieldLabel="Title"
                                                 name="./title"
-                                                require="{Boolean}true"/>
+                                                required="{Boolean}true"/>
                                             <description
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                                 fieldDescription="Enter the description"
                                                 fieldLabel="Description"
                                                 name="./description"
-                                                require="{Boolean}true"/>
+                                                required="{Boolean}true"/>
                                             <ctaText
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                 fieldDescription="Enter CTA Text"
                                                 fieldLabel="CTA Text"
                                                 name="./ctaText"
-                                                require="{Boolean}true"/>
+                                                required="{Boolean}true"/>
                                             <ctaPath
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                 fieldDescription="Select CTA Path"
                                                 fieldLabel="CTA PATH"
                                                 name="./ctaPath"
-                                                require="{Boolean}true"
-                                                rootPath="/content"/>
+                                                rootPath="/content/"/>
                                             <alignment
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Alignment Type"
+                                                fieldLabel="Alignment"
                                                 name="./alignment">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <centre
+                                                    <center
                                                         jcr:primaryType="nt:unstructured"
                                                         selected="{Boolean}true"
-                                                        text="Centre"
-                                                        value="centre"/>
+                                                        text="Center"
+                                                        value="center"/>
                                                     <left
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Left"
@@ -98,6 +105,9 @@
                             </columns>
                         </items>
                     </asset>
+                    <metadata
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"/>
                 </items>
             </tabs>
         </items>

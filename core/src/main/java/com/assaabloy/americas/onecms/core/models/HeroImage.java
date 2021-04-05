@@ -27,43 +27,43 @@ public class HeroImage {
 
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
 
-	// @Self
-	// private Resource resource;
+	@Self
+	private SlingHttpServletRequest request;
 
-	 @Self
-	 private SlingHttpServletRequest request;
-
-	 @OSGiService
-	 private ModelFactory modelFactory;
+	@OSGiService
+	private ModelFactory modelFactory;
 
 	private String jsonData;
 
-	
-	@Optional @ValueMapValue
+	@Optional
+	@ValueMapValue
 	private String fileName;
 
-	
-	@Optional @ValueMapValue
+	@Optional
+	@ValueMapValue
 	private String fileReference;
 
-	
-	@Optional @ValueMapValue
+	@Optional
+	@ValueMapValue
 	private String altText;
 
-	
+	@Optional
 	@ValueMapValue
 	private String title;
 
-	
+	@Optional
 	@ValueMapValue
 	private String description;
 
+	@Optional
 	@ValueMapValue
 	private String ctaText;
 
+	@Optional
 	@ValueMapValue
 	private String ctaPath;
 
+	@Optional
 	@ValueMapValue
 	private String alignment;
 
@@ -73,16 +73,12 @@ public class HeroImage {
 
 	@PostConstruct
 	protected void init() {
-		 LOG.debug("Inside INIT");
-		 image = modelFactory.getModelFromWrappedRequest(request,
-		 request.getResource(), Image.class);
-		 LOG.debug("Request " + request);
-		 LOG.debug("Request resource " + request.getResource());
-		 LOG.debug("Image is " + image);
-		 
-		 final Image componentImage = getImage();
-			LOG.debug("Image " + componentImage);
-			src = componentImage.getSrc();
+		LOG.debug("Inside INIT");
+		image = modelFactory.getModelFromWrappedRequest(request, request.getResource(), Image.class);
+		
+		final Image componentImage = getImage();
+		LOG.debug("Image " + componentImage);
+		src = componentImage.getSrc();
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			jsonData = objectMapper.writeValueAsString(this);
@@ -135,7 +131,7 @@ public class HeroImage {
 	}
 
 	@JsonIgnore
-	public String getSrc() {		
+	public String getSrc() {
 		return src;
 	}
 
