@@ -110,6 +110,7 @@
 						 <target>/apps/onecms-packages/application/install</target>
 						 </embedded>
 ​                    </embeddeds>
+
                 </configuration>
             </plugin>
             <plugin>
@@ -231,6 +232,7 @@
 			<type>zip</type>
 			<classifier>min</classifier> <!-- optional, see below -->
 		</dependency>
+
     
 		<dependency>
 		 <groupId>com.adobe.cq</groupId>
@@ -248,6 +250,7 @@
 		 <groupId>com.adobe.cq</groupId>
 		 <artifactId>core.wcm.components.core</artifactId>
 		 </dependency>
+
 
     </dependencies>
 </project>
