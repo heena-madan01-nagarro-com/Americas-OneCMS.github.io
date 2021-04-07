@@ -1,68 +1,84 @@
 package com.assaabloy.americas.onecms.core.models;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.inject.Named;
 
-import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
-import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
-
-import com.adobe.cq.export.json.ExporterConstants;
-
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.models.factory.ModelFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.adobe.cq.export.json.ExporterConstants;
+import com.adobe.cq.wcm.core.components.models.Image;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@Model(adaptables = Resource.class, resourceType = "onecms/components/heroImage")
+@Model(adaptables = SlingHttpServletRequest.class, resourceType = "onecms/components/heroImage")
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 @JsonSerialize(as = HeroImage.class)
 public class HeroImage {
 
-	//private final Logger LOG = LoggerFactory.getLogger(getClass());
+	private final Logger LOG = LoggerFactory.getLogger(getClass());
 
 	@Self
-	private Resource resource;
+	private SlingHttpServletRequest request;
+
+	@OSGiService
+	private ModelFactory modelFactory;
 
 	private String jsonData;
 
-	@Inject
 	@Optional
+	@ValueMapValue
 	private String fileName;
 
-	@Inject
 	@Optional
+	@ValueMapValue
+	private String fileReference;
+
+	@Optional
+	@ValueMapValue
 	private String altText;
 
-	@Inject
-	@Required
+	@Optional
+	@ValueMapValue
 	private String title;
 
-	@Inject
-	@Required
+	@Optional
+	@ValueMapValue
 	private String description;
 
-	@Inject
-	@Required
+	@Optional
+	@ValueMapValue
 	private String ctaText;
 
-	@Inject
-	@Required
+	@Optional
+	@ValueMapValue
 	private String ctaPath;
 
-	@Inject
-	@Required
+	@Optional
+	@ValueMapValue
 	private String alignment;
+
+	private Image image;
+
+	private String src;
 
 	@PostConstruct
 	protected void init() {
+		LOG.debug("Inside INIT");
+		image = modelFactory.getModelFromWrappedRequest(request, request.getResource(), Image.class);
+		
+		final Image componentImage = getImage();
+		LOG.debug("Image " + componentImage);
+		src = componentImage.getSrc();
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			jsonData = objectMapper.writeValueAsString(this);
@@ -78,7 +94,11 @@ public class HeroImage {
 	}
 
 	public String getFileName() {
-		return fileName;
+		return src;
+	}
+
+	public String getFileReference() {
+		return fileReference;
 	}
 
 	public String getAltText() {
@@ -103,6 +123,16 @@ public class HeroImage {
 
 	public String getAlignment() {
 		return alignment;
+	}
+
+	@JsonIgnore
+	private Image getImage() {
+		return image;
+	}
+
+	@JsonIgnore
+	public String getSrc() {
+		return src;
 	}
 
 }

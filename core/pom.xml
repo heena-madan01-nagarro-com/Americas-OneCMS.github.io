@@ -141,5 +141,10 @@ Import-Package: javax.annotation;version=0.0.0,*
             <version>5.0.4</version>
             <type>jar</type>
         </dependency>
-    </dependencies>
+
+		<dependency>
+			 <groupId>com.adobe.cq</groupId>
+			 <artifactId>core.wcm.components.core</artifactId>
+		</dependency>
+	</dependencies>
 </project>

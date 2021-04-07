@@ -92,7 +92,25 @@
 							<type>zip</type>
 							<target>/apps/onecms-packages/content/install</target>
 						</embedded>
-                    </embeddeds>
+						<embedded>
+						 <groupId>com.adobe.cq</groupId>
+						 <artifactId>core.wcm.components.content</artifactId>
+						 <type>zip</type>
+						 <target>/apps/onecms-packages/application/install</target>
+						 </embedded>
+						 <embedded>
+						 <groupId>com.adobe.cq</groupId>
+						 <artifactId>core.wcm.components.config</artifactId>
+						 <type>zip</type>
+						 <target>/apps/onecms-packages/application/install</target>
+						 </embedded>
+						 <embedded>
+						 <groupId>com.adobe.cq</groupId>
+						 <artifactId>core.wcm.components.core</artifactId>
+						 <target>/apps/onecms-packages/application/install</target>
+						 </embedded>
+​                    </embeddeds>
+
                 </configuration>
             </plugin>
             <plugin>
@@ -214,6 +232,25 @@
 			<type>zip</type>
 			<classifier>min</classifier> <!-- optional, see below -->
 		</dependency>
+
+    
+		<dependency>
+		 <groupId>com.adobe.cq</groupId>
+		 <artifactId>core.wcm.components.content</artifactId>
+		 <type>zip</type>
+		 </dependency>
+
+		 <dependency>
+		 <groupId>com.adobe.cq</groupId>
+		 <artifactId>core.wcm.components.config</artifactId>
+		 <type>zip</type>
+		 </dependency>
+
+		 <dependency>
+		 <groupId>com.adobe.cq</groupId>
+		 <artifactId>core.wcm.components.core</artifactId>
+		 </dependency>
+
 
     </dependencies>
 </project>
