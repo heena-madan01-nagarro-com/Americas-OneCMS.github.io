@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ |  ***********************************************************************
+ |  ASSA ABLOY Americas CONFIDENTIAL
+ |  ___________________
+ |
+ |  Copyright 2021 ASSA ABLOY Americas
+ |  All Rights Reserved.
+ |
+ |  NOTICE:  All information contained herein is, and remains the property
+ |  of ASSA ABLOY Americas and its suppliers, if any. The intellectual and
+ |  technical concepts contained herein are proprietary to ASSA ABLOY Americas
+ |  and its suppliers and are protected by trade secret or copyright law.
+ |  Dissemination of this information or reproduction of this material
+ |  is strictly forbidden unless prior written permission is obtained
+ |  from ASSA ABLOY Americas.
+ |  ***********************************************************************
+-->
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="MegaMenu"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+   <content jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+      <items jcr:primaryType="nt:unstructured">
+         <tabs jcr:primaryType="nt:unstructured"
+               sling:resourceType="granite/ui/components/coral/foundation/tabs">
+            <items jcr:primaryType="nt:unstructured">
+               <megamenu jcr:primaryType="nt:unstructured"
+                         jcr:title="Mega Menu"
+                         sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                           <megaMenuItems composite="{Boolean}true"
+                                          fieldLabel="MegaMenu Items (Level-1)"
+                                          jcr:primaryType="nt:unstructured"
+                                          sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                              <field cq-msm-lockable="./megaMenuItems"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./megaMenuItems"
+                                     sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                 <items jcr:primaryType="nt:unstructured">
+                                    <megaMenuItemLabelLevel1 fieldDescription="Label to display on the MegaMenu First level item"
+                                                             fieldLabel="MegaMenu First Level Item Label"
+                                                             jcr:primaryType="nt:unstructured"
+                                                             name="./megaMenuItemLabelLevel1"
+                                                             required="{Boolean}true"
+                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    <megaMenuItemLinkLevel1 fieldDescription="Link to redirect for MegaMenu Item of First level"
+                                                            fieldLabel="MegaMenu Item Link/URL (L1)"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            name="./megaMenuItemLinkLevel1"
+                                                            rootPath="/content"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                                    <megaMenuItemDescriptionLevel1 fieldDescription="Please enter description for MegaMenu Item of First level"
+                                                                   fieldLabel="MegaMenu First Level Item Description"
+                                                                   jcr:primaryType="nt:unstructured"
+                                                                   name="./megaMenuItemDescriptionLevel1"
+                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    <megaMenuItemsL2 composite="{Boolean}true"
+                                                                  fieldLabel="MegaMenu Items (Level-2)"
+                                                     jcr:primaryType="nt:unstructured"
+                                                     name="./megaMenuItemsL2"
+                                                     sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                              <field cq-msm-lockable="./megaMenuItemsL2"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./megaMenuItemsL2"
+                                     sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                 <items jcr:primaryType="nt:unstructured">
+                                    <megaMenuItemLabelLevel2 fieldDescription="Label to display on the MegaMenu Second level item"
+                                                             fieldLabel="MegaMenu Second Level Item Label"
+                                                             jcr:primaryType="nt:unstructured"
+                                                             name="./megaMenuItemLabelLevel2"
+                                                             required="{Boolean}true"
+                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    <megaMenuItemLinkLevel2 fieldDescription="Link to redirect for MegaMenu Item of Second level"
+                                                            fieldLabel="MegaMenu Item Link/URL (L2)"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            name="./megaMenuItemLinkLevel2"
+                                                            rootPath="/content"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                                    <megaMenuItemDescriptionLevel2 fieldDescription="Please enter description for MegaMenu Item of Second level"
+                                                                   fieldLabel="MegaMenu Second Level Item Description"
+                                                                   jcr:primaryType="nt:unstructured"
+                                                                   name="./megaMenuItemDescriptionLevel2"
+                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    <megaMenuItemsL3 composite="{Boolean}true"
+                                                                  fieldLabel="MegaMenu Items (Level-3)"
+                                                     jcr:primaryType="nt:unstructured"
+                                                     name="./megaMenuItemsL3"
+                                                     sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                                           <field cq-msm-lockable="./megaMenuItemsL3"
+                                                  jcr:primaryType="nt:unstructured"
+                                                  name="./megaMenuItemsL3"
+                                                  sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                          <items jcr:primaryType="nt:unstructured">
+                                                <megaMenuItemLabelLevel3 fieldDescription="Label to display on the MegaMenu Third level item"
+                                                                          fieldLabel="MegaMenu Third Level Item Label"
+                                                                          jcr:primaryType="nt:unstructured"
+                                                                          name="./megaMenuItemLabelLevel3"
+                                                                          required="{Boolean}true"
+                                                                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                                <megaMenuItemLinkLevel3 fieldDescription="Link to redirect for MegaMenu Item of Third level"
+                                                                        fieldLabel="MegaMenu Item Link/URL (L3)"
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        name="./megaMenuItemLinkLevel3"
+                                                                        rootPath="/content"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                                                <megaMenuItemDescriptionLevel3 fieldDescription="Please enter description for MegaMenu Item of Third level"
+                                                                            fieldLabel="MegaMenu Third Level Item Description"
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            name="./megaMenuItemDescriptionLevel3"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                          </items>
+                                          </field>
+                                          </megaMenuItemsL3>
+                                         </items>
+                                       </field>
+                                       </megaMenuItemsL2>
+                                 </items>
+                              </field>
+                           </megaMenuItems>
+                        </items>
+                     </column>
+                  </items>
+               </megamenu>
+            </items>
+         </tabs>
+      </items>
+   </content>
+</jcr:root>
