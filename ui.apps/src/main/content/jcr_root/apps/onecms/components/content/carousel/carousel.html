@@ -1,0 +1,12 @@
+<sly data-sly-use.carousel="com.assaabloy.americas.onecms.core.models.CarouselModel"/>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"/>
+
+<sly data-sly-call="${clientLib.all @ categories='assa-abloy-onecms.one-cms-library'}" />
+
+
+<assa-carousel model='${carousel.jsonData}'></assa-carousel>
+
+
+<div data-sly-test="${wcmmode.edit || wcmmode.design}">
+ Configure Carousel Component here
+</div>
