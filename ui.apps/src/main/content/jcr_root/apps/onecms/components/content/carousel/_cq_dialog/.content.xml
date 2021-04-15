@@ -284,8 +284,8 @@
                                                                         <ctaTheme
                                                                             jcr:primaryType="nt:unstructured"
                                                                             sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                                            fieldDescription="Select CTA Theme"
-                                                                            fieldLabel="CTA Theme"
+                                                                            fieldDescription="Select CTA Design"
+                                                                            fieldLabel="CTA Design/Theme"
                                                                             name="./ctaTheme">
                                                                             <items jcr:primaryType="nt:unstructured">
                                                                                 <primary
