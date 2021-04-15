@@ -52,30 +52,38 @@
                                                   fieldLabel="Navigation Item Label"
                                                   jcr:primaryType="nt:unstructured"
                                                   name="./navItemLabel"
-												  required="{Boolean}true"
+                                                              required="{Boolean}true"
                                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                                     <navItemLink fieldDescription="Navigation Item Link/URL"
                                                  fieldLabel="Nav Item URL"
                                                  jcr:primaryType="nt:unstructured"
                                                  name="./navItemLink"
                                                  sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-									<itemtype
-										jcr:primaryType="nt:unstructured"
-										sling:resourceType="granite/ui/components/coral/foundation/form/select"
-										fieldLabel="Item Type"
-										name="./itemType">
-										<items jcr:primaryType="nt:unstructured">
-										  <link
-											jcr:primaryType="nt:unstructured"
-											selected="{Boolean}true"
-											text="Link"
-											value="link" />
-										  <button
-											jcr:primaryType="nt:unstructured"
-											text="Button"
-											value="button" />
-										</items>
-									</itemtype>
+                                             <itemtype
+                                                  jcr:primaryType="nt:unstructured"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                  fieldLabel="Item Type"
+                                                  name="./itemType">
+                                                  <items jcr:primaryType="nt:unstructured">
+                                                    <link
+                                                       jcr:primaryType="nt:unstructured"
+                                                       selected="{Boolean}true"
+                                                       text="Link"
+                                                       value="link" />
+                                                    <button
+                                                       jcr:primaryType="nt:unstructured"
+                                                       text="Button"
+                                                       value="button" />
+                                                  </items>
+                                             </itemtype>
+                                     <enableMegaMenu
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        fieldDescription="Please check to enable Megamenu for Navigation Item"
+                                        id="enableMegaMenu"
+                                        name="./enableMegaMenu"
+                                        text="Add MegaMenu for this Navigation Item"
+                                        value="true"/>
                                  </items>
                               </field>
                            </navItems>
@@ -124,7 +132,7 @@
                                              jcr:primaryType="nt:unstructured"
                                              name="./iconUrl"
                                              rootPath="/content/dam"
-											 required="{Boolean}true"
+                                             required="{Boolean}true"
                                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
                                     <iconAltText fieldDescription="Alt text to display on the Icon"
                                                  fieldLabel="Icon Alt text"
@@ -143,6 +151,75 @@
                      </column>
                   </items>
                </brandData>
+
+                    <featuredProduct jcr:primaryType="nt:unstructured"
+                         jcr:title="Featured Product"
+                         sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                           <title cq-msm-lockable="./title"
+                                  fieldDescription="Title to display on Featured product"
+                                  fieldLabel="Featured Product Title "
+                                  jcr:primaryType="nt:unstructured"
+                                  name="./title"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <description cq-msm-lockable="./description"
+                                        fieldDescription="Detailed Description for Featured product"
+                                        fieldLabel="Featured Product Description "
+                                        jcr:primaryType="nt:unstructured"
+                                        name="./description"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+                           <featuredProductImage allowUpload="{Boolean}false"
+                                                 autoStart="{Boolean}false"
+                                                 class="cq-droptarget"
+                                                 cq-msm-lockable="./featuredProductImage/file"
+                                                 fieldDescription="Image for Featured product"
+                                                 fieldLabel="Featured Product Image "
+                                                 fileReferenceParameter="./featuredProductImage/fileReference"
+                                                 jcr:primaryType="nt:unstructured"
+                                                 mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+                                                 multiple="{Boolean}false"
+                                                 name="./featuredProductImage/file"
+                                                 sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                 title="Drag to select image"
+                                                 uploadUrl="${suffix.path}"
+                                                 useHTML5="{Boolean}true"/>
+                           <featuredProductImageResType jcr:primaryType="nt:unstructured"
+                                                        name="./featuredProductImage/sling:resourceType"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                        value="core/wcm/components/image/v2/image"/>
+                           <productUrl fieldDescription="Path/URL of the Product Page"
+                                             fieldLabel="Product Image Destination URL"
+                                             jcr:primaryType="nt:unstructured"
+                                             name="./productUrl"
+                                             rootPath="/content"
+                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                            <target
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Target"
+                                        name="./target">
+                                             <items jcr:primaryType="nt:unstructured">
+                                               <self
+                                                  jcr:primaryType="nt:unstructured"
+                                                  selected="{Boolean}true"
+                                                  text="Self"
+                                                  value="_self" />
+                                               <blank
+                                                  jcr:primaryType="nt:unstructured"
+                                                  text="Blank (new tab)"
+                                                  value="_blank" />
+                                             </items>
+                            </target>
+                        </items>
+                     </column>
+                  </items>
+               </featuredProduct>
+            
             </items>
          </tabs>
       </items>
