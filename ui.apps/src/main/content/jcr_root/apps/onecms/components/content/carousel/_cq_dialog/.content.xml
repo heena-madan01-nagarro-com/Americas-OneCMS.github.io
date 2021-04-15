@@ -78,7 +78,6 @@
                                                                             fieldDescription="Enter the description"
                                                                             fieldLabel="Description"
                                                                             name="./description"
-                                                                            required="{Boolean}true"
                                                                             useFixedInlineToolbar="{Boolean}true">
                                                                             <rtePlugins jcr:primaryType="nt:unstructured">
                                                                                 <format
