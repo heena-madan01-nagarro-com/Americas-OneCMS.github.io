@@ -1,0 +1,16 @@
+<sly data-sly-use.socialLinks="com.assaabloy.americas.onecms.core.models.SocialLinksMulti"
+
+	data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+	data-sly-test.hasContent="${socialLinks.items}">
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"/>
+<sly data-sly-call="${clientLib.all @ categories='assa-abloy-onecms.one-cms-library'}" />
+
+<assa-social-links model='${socialLinks.jsonData}'></assa-social-links>
+</sly>
+
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
+
+
+
+

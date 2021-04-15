@@ -20,7 +20,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@Model(adaptables = SlingHttpServletRequest.class, resourceType = "onecms/components/heroImage")
+@Model(adaptables = SlingHttpServletRequest.class, resourceType = "onecms/components/content/heroImage")
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 @JsonSerialize(as = HeroImage.class)
 public class HeroImage {
@@ -75,7 +75,7 @@ public class HeroImage {
 	protected void init() {
 		LOG.debug("Inside INIT");
 		image = modelFactory.getModelFromWrappedRequest(request, request.getResource(), Image.class);
-		
+
 		final Image componentImage = getImage();
 		LOG.debug("Image " + componentImage);
 		src = componentImage.getSrc();
